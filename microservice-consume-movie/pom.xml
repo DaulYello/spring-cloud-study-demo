@@ -15,6 +15,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -23,6 +24,15 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>2.2.0.RELEASE</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.5.2</version>
+			<scope>test</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -38,19 +48,6 @@
 		</dependency>
 	</dependencies>
 
-	<!--<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					&lt;!&ndash;<source>1.8</source>
-					<target>1.8</target>&ndash;&gt;
-					<encoding>UTF-8</encoding>
-					&lt;!&ndash;<encoding>UTF-8</encoding>&ndash;&gt;
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>-->
+
 
 </project>
