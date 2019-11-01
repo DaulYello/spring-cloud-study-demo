@@ -1,0 +1,20 @@
+
+server:
+  port: 7900
+spring:
+  jpa:  #持久层框架
+    generate-ddl: false  #启动的时候要不要生成ddl语句(這里我们自己写了ddl语句)
+    show-sql: true  #打印sql语句
+    hibernate:   #jpa是依赖hibernate，所以需要对hibernate进行配置
+      ddl-auto: none  #启动的时候不做ddl的处理
+  datasource:
+    platform: h2  #h2是内嵌式的数据库，用来展示一些数据，可以和项目一起打包，一般用于测试
+    schema: classpath:schema.sql  #建表语句，配置classpath下面的schema.sql
+    data: classpath:data.sql  #表里的数据
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  #往上数三行一起表示显示sql语句
+    com.hs: debug
