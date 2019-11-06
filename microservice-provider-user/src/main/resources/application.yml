@@ -11,6 +11,9 @@ spring:
     platform: h2  #h2是内嵌式的数据库，用来展示一些数据，可以和项目一起打包，一般用于测试
     schema: classpath:schema.sql  #建表语句，配置classpath下面的schema.sql
     data: classpath:data.sql  #表里的数据
+
+  application:
+    name: user-service
 logging:
   level:
     root: INFO
@@ -18,3 +21,7 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE  #往上数三行一起表示显示sql语句
     com.hs: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
