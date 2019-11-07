@@ -15,7 +15,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring-cloud.version>Hoxton.RC1</spring-cloud.version>
+		<!--<spring-cloud.version>Hoxton.RC1</spring-cloud.version>-->
 	</properties>
 
 
@@ -32,7 +32,7 @@
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
@@ -69,6 +69,10 @@
 		</dependency>
 	</dependencies>
 
+	<!--  这个依赖主要是版本统一管理，例如上面的spring-cloud-starter-netflix-eureka-client包，就没有写版本号。能这样写的前提有两种原因
+	1.就在这个pom.xml中写下面的这个依赖
+	2.在父级去写在个依赖，所有的子级都统一使用
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -79,23 +83,7 @@
 				<scope>import</scope>
 			</dependency>
 		</dependencies>
-	</dependencyManagement>
+	</dependencyManagement>-->
 
-	<repositories>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-	</repositories>
-
-	<!--<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>-->
 
 </project>
